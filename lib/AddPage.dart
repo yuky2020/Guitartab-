@@ -2,6 +2,7 @@
 import 'dart:core';
 import 'dart:core';
 
+import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -59,7 +60,7 @@ class _AddPageState extends State<AddPage> {
             controller: _controller,
             keyboardType: TextInputType.datetime,
             validator: (val) =>
-                isValidDob(val) ? null : 'Not a valid date',
+                true ? null : 'Not a valid date',
             onSaved: (val) => newContact.dob = convertToDate(val),
           )),
           new IconButton(
@@ -81,7 +82,7 @@ class _AddPageState extends State<AddPage> {
             new WhitelistingTextInputFormatter(
                 new RegExp(r'^[()\d -]{1,15}$')),
           ],
-          validator: (value) => isValidPhoneNumber(value)
+          validator: (value) => true
               ? null
               : 'Phone number must be entered as (###)###-####',
           onSaved: (val) => newContact.phone = val,
@@ -93,7 +94,7 @@ class _AddPageState extends State<AddPage> {
             labelText: 'Email',
           ),
           keyboardType: TextInputType.emailAddress,
-          validator: (value) => isValidEmail(value)
+          validator: (value) => true
               ? null
               : 'Please enter a valid email address',
           onSaved: (val) => newContact.email = val,
@@ -194,7 +195,33 @@ void _submitForm() {
   }
 
 
-}
 
-isValidPhoneNumber(String value) {
-}
+
+final TextEditingController _controller = new TextEditingController();
+  Future _chooseDate(BuildContext context, String initialDateString) async {
+    var now = new DateTime.now();
+    var initialDate = convertToDate(initialDateString) ?? now;
+    initialDate = (initialDate.year >= 1900 && initialDate.isBefore(now) ? initialDate : now);
+
+    var result = await showDatePicker(
+        context: context,
+        initialDate: initialDate,
+        firstDate: new DateTime(1900),
+        lastDate: new DateTime.now());
+
+    if (result == null) return;
+
+    setState(() {
+      _controller.text = new DateFormat.yMd().format(result);
+    });
+  }
+
+  DateTime convertToDate(String input) {
+    try 
+    {
+      var d = new DateFormat.yMd().parseStrict(input);
+      return d;
+    } catch (e) {
+      return null;
+    }    
+  }}
