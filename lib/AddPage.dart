@@ -19,9 +19,9 @@ import 'Tab.dart';
 class _AddPageState extends State<AddPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-  List<String> _colors = <String>['', '1', '2', '3', '4','5','6','7'];
+  List<String> _capo = <String>['', '1', '2', '3', '4','5','6','7'];
   String _color = '';
-  Contact newContact=new Contact();
+  Tabulatura newContact=new Tabulatura();
 
    @override
    Widget build(BuildContext context) {
@@ -119,7 +119,7 @@ class _AddPageState extends State<AddPage> {
                       state.didChange(newValue);
                     });
                   },
-                  items: _colors.map((String value) {
+                  items: _capo.map((String value) {
                     return new DropdownMenuItem<String>(
                       value: value,
                       child: new Text(value),

@@ -1,4 +1,4 @@
- class Contact {
+ class Tabulatura {
   String name;
   DateTime dob;
   String phone = '';
