@@ -1,8 +1,8 @@
 
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:untitled1/AddPage.dart';
 import 'package:untitled1/Serchpage.dart';
- import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 
@@ -35,23 +35,38 @@ import 'package:untitled1/Serchpage.dart';
 class _MyAppState extends State<MyApp> {
     @override
     Widget build(BuildContext context) {
+      Widget button2Section = Container(
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              //implements on tap for every botton
+              _buildButtonColumn(context,Colors.purple, Icons.find_in_page, 'find a tab','/second',),
+
+            ]),
+      );
+
       Widget buttonSection = Container(
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 //implements on tap for every botton
-                _buildButtonColumn(context,Colors.red, Icons.find_in_page, 'find a tab','/second',),
-                _buildButtonColumn(context,Colors.red, Icons.add, 'add new tab','/third'),
+                _buildButtonColumn(context,Colors.purple, Icons.find_in_page, 'find a tab','/second',),
+                _buildButtonColumn(context,Colors.purple, Icons.add, 'add new tab','/third'),
 
 
-                _buildButtonColumn(context,Colors.red, Icons.share, 'SHARE this app','/fourth'),
-              ]));
+                _buildButtonColumn(context,Colors.purple, Icons.share, 'SHARE this app','/fourth'),
+              ]),
+          );
       return MaterialApp(
           title: 'Guitar Tab',
           theme: new ThemeData(
-            primarySwatch: Colors.red,
+          //  primarySwatch: Colors.purple,
+            //backgroundColor: Colors.black87,
+            //primaryColor: Colors.black87,
+
           ),
           home: Scaffold(
+           //   backgroundColor: Colors.black,
               drawer: Drawer(
                 child: ListView(
                   // Important: Remove any padding from the ListView.
@@ -60,7 +75,7 @@ class _MyAppState extends State<MyApp> {
                     DrawerHeader(
                       child: Text('Como tu te iama io no se'),
                       decoration: BoxDecoration(
-                        color: Colors.red,
+                        color: Colors.purple,
                       ),
                     ),
                     ListTile(
@@ -84,10 +99,11 @@ class _MyAppState extends State<MyApp> {
                   children: [
                     titleSection,
                     buttonSection,
+
                   ]
 
-              )
-
+              ),
+              bottomNavigationBar: button2Section
           )
 
       );
@@ -124,7 +140,7 @@ class _MyAppState extends State<MyApp> {
           /*3*/
           Icon(
             Icons.star,
-            color: Colors.red[500],
+            color: Colors.purple[500],
           ),
           Text('41'),
         ],
@@ -142,6 +158,7 @@ class _MyAppState extends State<MyApp> {
     },
     child: Column(
      mainAxisSize: MainAxisSize.min,
+
      mainAxisAlignment: MainAxisAlignment.center,
      children: [
        Icon(icon, color: color),

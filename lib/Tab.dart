@@ -1,7 +1,7 @@
  class Tabulatura {
-  String name;
-  DateTime dob;
-  String phone = '';
-  String email = '';
-  String favoriteColor = '';
+  String title;
+  String artist;
+  String tuning = '';
+  String testo = '';
+  String capo = '';
 }

@@ -29,21 +29,21 @@ class ContactService {
   Tabulatura _fromJson(String json) {
     Map<String, dynamic> map = JsonCodec().decode(json); 
     var contact = new Tabulatura();
-    contact.name = map['name'];
-    contact.dob = new DateFormat.yMd().parseStrict(map['dob']);
-    contact.phone = map['phone'];
-    contact.email = map['email'];
-    contact.email = map['favoriteColor'];
+    contact.artist = map['artist'];
+    contact.title= map['title'];
+    contact.tuning = map['tuning'];
+    contact.testo = map['testo'];
+    contact.capo = map['capo'];
     return contact;
   }
 
   String _toJson(Tabulatura contact) {
     var mapData = new Map();
-    mapData["name"] = contact.name;
-    mapData["dob"] = new DateFormat.yMd().format(contact.dob);
-    mapData["phone"] = contact.phone;
-    mapData["email"] = contact.email;
-    mapData["favoriteColor"] = contact.favoriteColor;
+    mapData["artist"] = contact.artist;
+    mapData["title"] = contact.title;
+    mapData["tuning"] = contact.tuning;
+    mapData["testo"] = contact.testo;
+    mapData["capo"] = contact.capo;
     String json = JsonCodec().encode(mapData);
    print(json);
     return json;
