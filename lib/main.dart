@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled1/AddPage.dart';
 import 'package:untitled1/Serchpage.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:untitled1/serchlocal.dart';
 
 
 
@@ -22,6 +23,8 @@ import 'package:url_launcher/url_launcher.dart';
 
        '/third': (context) => AddPage(),
        '/fourth':(context) => SharePage(),
+       '/fifth':(context) => SerchLocalPage(),
+
      },
    ));
  }
@@ -40,7 +43,7 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               //implements on tap for every botton
-              _buildButtonColumn(context,Colors.purple, Icons.find_in_page, 'find a tab','/second',),
+              _buildButtonColumn(context,Colors.purple, Icons.find_in_page, 'find a tab','/fifth',),
 
             ]),
       );

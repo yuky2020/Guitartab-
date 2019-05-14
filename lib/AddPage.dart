@@ -1,5 +1,6 @@
 
 import 'dart:core';
+import 'dart:io';
 
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ import 'package:flutter/widgets.dart';
 import 'package:untitled1/dd.dart';
 import 'dart:async';
 import 'Tab.dart';
+import 'package:path_provider/path_provider.dart';
 
 
  class  AddPage extends StatefulWidget {
@@ -151,93 +153,119 @@ class _AddPageState extends State<AddPage> {
             child: new RaisedButton(
               child: const Text('Submit'),
               onPressed: _submitForm,
-                          )),
-                ],
-              )))
+                                        )),
+                              ],
+                            )))
+                                                
+                     
+                     
+                     ));
+                 }
+              
+                   
+                
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              void _submitForm() {
+                  final FormState form = _formKey.currentState;
+              
+                  if (!form.validate()) {
+                    showMessage('Form is not valid!  Please review and correct.');
+                  } else {
+                    localSave(newContact);
+                                        form.save(); //This invokes each onSaved event
                                   
-       
-       
-       ));
-   }
+                                        print('Form save called, newTab is now up to date...');
+                                        print('Title: ${newContact.title}');
+                                        print('artist: ${newContact.artist}');
+                                        print('tuning: ${newContact.tuning}');
+                                        print('testo: ${newContact.testo}');
+                                        print('Capo: ${newContact.capo}');
+                                        print('========================================');
+                                        print('Submitting to back end...');
+                                        var contactService = new ContactService();
+                                        contactService.createContact(newContact)
+                                        .then((value) => 
+                                          showMessage('New Tab created for ${value.title}!', Colors.blue)
+                                        );
+                                      }
+                                    }
+                                  
+                                  
+                                  
+                                  
+                                      void showMessage(String message, [MaterialColor color = Colors.red]) {
+                                      _scaffoldKey.currentState
+                                          .showSnackBar(new SnackBar(backgroundColor: color, content: new Text(message)));
+                                    }
+                                  
+                                  
+                                  
+                                  
+                                  final TextEditingController _controller = new TextEditingController();
+                                    Future _chooseDate(BuildContext context, String initialDateString) async {
+                                      var now = new DateTime.now();
+                                      var initialDate = convertToDate(initialDateString) ?? now;
+                                      initialDate = (initialDate.year >= 1900 && initialDate.isBefore(now) ? initialDate : now);
+                                  
+                                      var result = await showDatePicker(
+                                          context: context,
+                                          initialDate: initialDate,
+                                          firstDate: new DateTime(1900),
+                                          lastDate: new DateTime.now());
+                                  
+                                      if (result == null) return;
+                                  
+                                      setState(() {
+                                        _controller.text = new DateFormat.yMd().format(result);
+                                      });
+                                    }
+                                  
+                                    DateTime convertToDate(String input) {
+                                      try 
+                                      {
+                                        var d = new DateFormat.yMd().parseStrict(input);
+                                        return d;
+                                      } catch (e) {
+                                        return null;
+                                      }    
+                                    }
+                    
+                      Future localSave(Tabulatura newContact) async {
+                        final file =await _localFile;
+                        file.writeAsString(newContact.artist+newContact.capo+newContact.testo);
 
-     
-  
+                      }}
+              
+             
+                Future<String> get _localPath async {
+                final directory = await getApplicationDocumentsDirectory();
+                return directory.path;
+                }
+                Future<File> get _localFile async {
+                  final path = await _localPath;
+                 return File('$path/counter.txt');
+                }
+
+                Future<File> writeCounter(int counter) async {
+               final file = await _localFile;
+
+                // Write the file
+                return file.writeAsString('$counter');
+                 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-void _submitForm() {
-    final FormState form = _formKey.currentState;
-
-    if (!form.validate()) {
-      showMessage('Form is not valid!  Please review and correct.');
-    } else {
-      form.save(); //This invokes each onSaved event
-
-      print('Form save called, newTab is now up to date...');
-      print('Title: ${newContact.title}');
-      print('artist: ${newContact.artist}');
-      print('tuning: ${newContact.tuning}');
-      print('testo: ${newContact.testo}');
-      print('Capo: ${newContact.capo}');
-      print('========================================');
-      print('Submitting to back end...');
-      var contactService = new ContactService();
-      contactService.createContact(newContact)
-      .then((value) => 
-        showMessage('New Tab created for ${value.title}!', Colors.blue)
-      );
-    }
-  }
-
-
-
-
-    void showMessage(String message, [MaterialColor color = Colors.red]) {
-    _scaffoldKey.currentState
-        .showSnackBar(new SnackBar(backgroundColor: color, content: new Text(message)));
-  }
-
-
-
-
-final TextEditingController _controller = new TextEditingController();
-  Future _chooseDate(BuildContext context, String initialDateString) async {
-    var now = new DateTime.now();
-    var initialDate = convertToDate(initialDateString) ?? now;
-    initialDate = (initialDate.year >= 1900 && initialDate.isBefore(now) ? initialDate : now);
-
-    var result = await showDatePicker(
-        context: context,
-        initialDate: initialDate,
-        firstDate: new DateTime(1900),
-        lastDate: new DateTime.now());
-
-    if (result == null) return;
-
-    setState(() {
-      _controller.text = new DateFormat.yMd().format(result);
-    });
-  }
-
-  DateTime convertToDate(String input) {
-    try 
-    {
-      var d = new DateFormat.yMd().parseStrict(input);
-      return d;
-    } catch (e) {
-      return null;
-    }    
-  }}
 
   // create the illusion of a beautifully scrolling text box
   /* return new Container(
