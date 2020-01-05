@@ -6,11 +6,10 @@ import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-
-import 'package:untitled1/dd.dart';
 import 'dart:async';
-import 'Tab.dart';
+import '../Data/Tabulatura.dart';
 import 'package:path_provider/path_provider.dart';
+import '../Services/ContactService.dart';
 
 
  class  AddPage extends StatefulWidget {
@@ -194,6 +193,7 @@ class _AddPageState extends State<AddPage> {
                                         print('Capo: ${newContact.capo}');
                                         print('========================================');
                                         print('Submitting to back end...');
+                                        
                                         var contactService = new ContactService();
                                         contactService.createContact(newContact)
                                         .then((value) => 

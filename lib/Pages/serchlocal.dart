@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled1/Tablu.dart';
+import 'package:GuitarTab/Data/Tabulatura.dart';
 class  SerchLocalPage extends StatefulWidget {
   @override
   _SerchLocalPageState  createState() => _SerchLocalPageState();
@@ -14,7 +14,7 @@ class _SerchLocalPageState extends State<SerchLocalPage> {
       );}}
   
 
-String horseUrl = 'https://i.stack.imgur.com/Dw6f7.png';
+String horseUrl = 'https://i.stack.imgur.com/Dw6f7.png';   
 String cowUrl = 'https://i.stack.imgur.com/XPOr3.png';
 String camelUrl = 'https://i.stack.imgur.com/YN0m7.png';
 String sheepUrl = 'https://i.stack.imgur.com/wKzo8.png';

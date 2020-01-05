@@ -8,6 +8,9 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.2'
+        
+
     }
 }
 
@@ -29,3 +32,4 @@ subprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+

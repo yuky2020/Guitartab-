@@ -1,4 +1,4 @@
-name: untitled1
+name: GuitarTab
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -19,8 +19,15 @@ environment:
 dependencies:
   path_provider: 
   intl: ^0.15.8
-  url_launcher: 
-   
+  
+  url_launcher:
+  
+  firebase_auth: ^0.14.0+5
+
+  google_sign_in: ^4.0.4
+  uuid: ^2.0.2 
+  
+
 
   http: ^0.12.0+2
   flutter:
@@ -45,6 +52,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  
+assets:
+  -assets/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

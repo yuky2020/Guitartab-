@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "361966298799",
+    "firebase_url": "https://guitartab-941fb.firebaseio.com",
+    "project_id": "guitartab-941fb",
+    "storage_bucket": "guitartab-941fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361966298799:android:791823df102ba7c793565a",
+        "android_client_info": {
+          "package_name": "com.example.untitled1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361966298799-0bcov7un7o0o1rmjneim67cgdlvc5u6j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn40s2VKCk_VTo7Gh1lXJXRsOTYKdLCe8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "361966298799-0bcov7un7o0o1rmjneim67cgdlvc5u6j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
