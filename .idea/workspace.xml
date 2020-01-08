@@ -7,8 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b67f4aac-73a3-49ef-8f41-daa6fc8638e9" name="Default Changelist" comment="testing on json">
-      <change afterPath="$PROJECT_DIR$/android/app/google-services.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Pages/HomePage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/HomePage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/widget_test.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +154,7 @@
       <workItem from="1578131859762" duration="98000" />
       <workItem from="1578334029245" duration="1272000" />
       <workItem from="1578408146016" duration="506000" />
-      <workItem from="1578504215976" duration="2427000" />
+      <workItem from="1578504215976" duration="4818000" />
     </task>
     <servers />
   </component>
@@ -169,22 +170,22 @@
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state x="693" y="303" width="524" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.28.1920.1052@0.28.1920.1052" timestamp="1578504569486" />
-    <state width="1876" height="178" key="GridCell.Tab.0.bottom" timestamp="1578506189146">
+    <state width="1876" height="178" key="GridCell.Tab.0.bottom" timestamp="1578507548198">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1876" height="178" key="GridCell.Tab.0.bottom/0.28.1920.1052@0.28.1920.1052" timestamp="1578506189146" />
-    <state width="1876" height="178" key="GridCell.Tab.0.center" timestamp="1578506189146">
+    <state width="1876" height="178" key="GridCell.Tab.0.bottom/0.28.1920.1052@0.28.1920.1052" timestamp="1578507548198" />
+    <state width="1876" height="178" key="GridCell.Tab.0.center" timestamp="1578507548196">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1876" height="178" key="GridCell.Tab.0.center/0.28.1920.1052@0.28.1920.1052" timestamp="1578506189146" />
-    <state width="1876" height="178" key="GridCell.Tab.0.left" timestamp="1578506189145">
+    <state width="1876" height="178" key="GridCell.Tab.0.center/0.28.1920.1052@0.28.1920.1052" timestamp="1578507548196" />
+    <state width="1876" height="178" key="GridCell.Tab.0.left" timestamp="1578507548195">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1876" height="178" key="GridCell.Tab.0.left/0.28.1920.1052@0.28.1920.1052" timestamp="1578506189145" />
-    <state width="1876" height="178" key="GridCell.Tab.0.right" timestamp="1578506189146">
+    <state width="1876" height="178" key="GridCell.Tab.0.left/0.28.1920.1052@0.28.1920.1052" timestamp="1578507548195" />
+    <state width="1876" height="178" key="GridCell.Tab.0.right" timestamp="1578507548197">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1876" height="178" key="GridCell.Tab.0.right/0.28.1920.1052@0.28.1920.1052" timestamp="1578506189146" />
+    <state width="1876" height="178" key="GridCell.Tab.0.right/0.28.1920.1052@0.28.1920.1052" timestamp="1578507548197" />
     <state x="464" y="189" key="SettingsEditor" timestamp="1578060887094">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
@@ -193,10 +194,10 @@
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state x="637" y="381" key="com.intellij.ide.util.TipDialog/0.28.1920.1052@0.28.1920.1052" timestamp="1578504216009" />
-    <state x="753" y="245" width="404" height="613" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578504359201">
+    <state x="753" y="245" width="414" height="613" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578509049044">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state x="753" y="245" width="404" height="613" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.28.1920.1052@0.28.1920.1052" timestamp="1578504359201" />
+    <state x="753" y="245" width="414" height="613" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.28.1920.1052@0.28.1920.1052" timestamp="1578509049044" />
     <state x="370" y="133" width="1169" height="837" key="new project wizard" timestamp="1578408182205">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>

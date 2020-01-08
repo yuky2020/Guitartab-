@@ -35,6 +35,7 @@ class _HomePageState extends State<HomePage> {
               ]),
         
             Row(),
+             Row(),
              Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -80,10 +81,14 @@ class _HomePageState extends State<HomePage> {
                     ),
                     ListTile(
                       title: Text('Supporta lo svilupatore '),
-                      onTap: () {
-                        // Update the state of the app
-                        // ...
-                      },
+                      onTap:() async{
+                        const url = 'https://paypal.me/pools/c/8lvS2rGPNw';
+                        if (await canLaunch(url)) {
+                        await launch(url, forceSafariVC: false);
+                                                  }
+                        else { throw 'Could not launch $url';
+                       }},
+
                     ),
                   ],
                 ),
