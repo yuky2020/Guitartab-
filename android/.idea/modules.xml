@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_web-0.8.3/android/android-google_sign_in_web.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_web-0.8.3/android/android-google_sign_in_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.14.0+9/android/firebase_auth.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.14.0+9/android/firebase_auth.iml" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.3+2/android/firebase_core.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.3+2/android/firebase_core.iml" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.1.1+2/android/firebase_core_web.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.1.1+2/android/firebase_core_web.iml" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-3.1.1/android/firebase_database.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-3.1.1/android/firebase_database.iml" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.1.1/android/google_sign_in.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.1.1/android/google_sign_in.iml" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.5.1/android/path_provider.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.5.1/android/path_provider.iml" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.4.1/android/url_launcher.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.4.1/android/url_launcher.iml" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-0.0.1+2/android/url_launcher_macos.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-0.0.1+2/android/url_launcher_macos.iml" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-0.1.0+2/android/url_launcher_web.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-0.1.0+2/android/url_launcher_web.iml" />
+    </modules>
+  </component>
+</project>

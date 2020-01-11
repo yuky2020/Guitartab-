@@ -27,6 +27,8 @@ class _AddEventState extends State<AddEvent> {
 
     return new MaterialApp(
         theme: new ThemeData(
+            brightness: Brightness.dark
+
           //  primarySwatch: Colors.purple;
         ),
 

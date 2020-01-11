@@ -1,54 +1,62 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
+  final   FirebaseUser user;
+  HomePage({Key key,@required this.user}):super(key :key);
+
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   @override
-   Widget build(BuildContext context) { 
-      Widget button2Container = Container(
-        child:Column( children: [
+   Widget build(BuildContext context) {
+      Widget button2Container = Stack(
+        children:<Widget>[
     
-           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
+         Positioned(child:new Align(
+           alignment: Alignment(0,-0.5),
+           // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //children: [
               //implements on tap for every botton
-              _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'Le tue preferite','/fifth',),
+            child:  _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'Le tue preferite','/fifth',),
 
-            ]),
-      
+            )),
 
-      
-           Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
+
+
+            Positioned(child:new Align(
+              alignment:Alignment(0,0),
+              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //children: [
                 //implements on tap for every botton
-                _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'find a tab','/second',),
+               child: new Row(children:[ _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'find a tab','/second',),
 
                 _buildButtonColumn(context,Colors.blue, Icons.add, 'add new tab','/third'),
 
 
                 _buildButtonColumn(context,Colors.blue, Icons.share, 'SHARE this app','/fourth'),
-              ]),
+              ]))),
         
-            Row(),
-             Row(),
-             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
+
+            Positioned( child: new Align(
+                        alignment:Alignment(0,-0.5),
+                        child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
                 //implements on tap for every botton
-                _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'Crea nuovo evento','/newevent',),
+                                   _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'Crea nuovo evento','/newevent',),
 
-                _buildButtonColumn(context,Colors.blue, Icons.add, 'unisciti ','/addtoevent'),
+                                   _buildButtonColumn(context,Colors.blue, Icons.add, 'unisciti ','/addtoevent'),
 
 
-                _buildButtonColumn(context,Colors.blue, Icons.share, 'Partecipa a un evento','/gotoevent'),
-              ]),
+                                    _buildButtonColumn(context,Colors.blue, Icons.share, 'Partecipa a un evento','/gotoevent'),
+              ]))),
           
-        ]));
+        ]);
 
 
 
@@ -95,12 +103,18 @@ class _HomePageState extends State<HomePage> {
               ),
 
 
-              body: Column (
+              body: Stack (
                     
                   children: [
                     
                     titleSection,
-                    button2Container
+                    button2Container,
+                    Text(
+                      widget.user.email ,
+                      style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                    )
                   ]
 
               ),
@@ -129,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Text(
-                  'Design by humans',
+                  'Bentornato',
                   style: TextStyle(
                     color: Colors.grey[500],
                   ),
@@ -138,11 +152,8 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           /*3*/
-          Icon(
-            Icons.star,
-            color: Colors.blue[500],
-          ),
-          Text('41'),
+
+          
         ],
       ),
     );

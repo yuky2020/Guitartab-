@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 
 
 class LoginPage extends StatefulWidget {
+ final String  error ;
+  LoginPage({Key key,  this.error}):super(key :key);
   @override
   _LoginPageState createState() => _LoginPageState();
 
@@ -35,6 +37,7 @@ class _LoginPageState extends State<LoginPage> {
           'Login Information',
           style: TextStyle(fontSize: 20),
         ),
+         if(widget.error!=null)Text(widget.error, style: TextStyle(fontSize: 20,color:Colors.red),),
         TextFormField(
            controller: emailController,
             keyboardType: TextInputType.emailAddress,
@@ -45,22 +48,39 @@ class _LoginPageState extends State<LoginPage> {
             obscureText: true,
             decoration: InputDecoration(labelText: "Password")),
         RaisedButton(child: Text("LOGIN"), onPressed: ()
-
     {
-        authHandler.handleSignInEmail(emailController.text, passwordController.text)
-    .then((FirebaseUser user) {
-         Navigator.push(context, new MaterialPageRoute(builder: (context) => new HomePage()));
+        authHandler.handleSignInEmail(emailController.text, passwordController.text).then((FirebaseUser user) {
+          if(user!=null){
+         Navigator.push(context, new MaterialPageRoute(builder: (context) => new HomePage(user: user)));}
+          else{Navigator.push(context, new MaterialPageRoute(builder: (context) => new LoginPage(error:'Credenziali non valide')));}
    }).catchError((e) => print(e));
            {
         Navigator.of(context).push(
         MaterialPageRoute(
         builder: (context) {
-        return HomePage();
+        return LoginPage(error: "credenziali non valide",);
         },
         ),
         );
 
         }}),
+        RaisedButton(child: Text("SignUp"), onPressed: ()
+        {
+          authHandler.handleSignUp(emailController.text, passwordController.text).then((FirebaseUser user) {
+            if(user!=null){
+              Navigator.push(context, new MaterialPageRoute(builder: (context) => new HomePage(user: user)));}
+            else{Navigator.push(context, new MaterialPageRoute(builder: (context) => new LoginPage(error:'Account gia esistente ')));}
+          }).catchError((e) => print(e));
+          {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return LoginPage();
+                },
+              ),
+            );
+
+          }}),
       ],
     ),
   ),

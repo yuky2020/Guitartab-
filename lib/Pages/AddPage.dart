@@ -29,7 +29,8 @@ class _AddPageState extends State<AddPage> {
 
      return new MaterialApp(
          theme: new ThemeData(
-         //  primarySwatch: Colors.purple;
+             brightness: Brightness.dark
+           //  primarySwatch: Colors.purple;
          ),
 
           home: Scaffold (
