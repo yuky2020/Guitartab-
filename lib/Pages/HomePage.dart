@@ -1,4 +1,6 @@
+import 'package:GuitarTab/Data/Utente.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -14,47 +16,41 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
    Widget build(BuildContext context) {
-      Widget button2Container = Stack(
+      Widget button2Container = Column(mainAxisAlignment: MainAxisAlignment.center,
         children:<Widget>[
     
-         Positioned(child:new Align(
-           alignment: Alignment(0,-0.5),
+
            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             //children: [
               //implements on tap for every botton
-            child:  _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'Le tue preferite','/fifth',),
+          Row(mainAxisAlignment: MainAxisAlignment.center,
 
-            )),
-
-
-
-            Positioned(child:new Align(
-              alignment:Alignment(0,0),
-              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //children: [
-                //implements on tap for every botton
-               child: new Row(children:[ _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'find a tab','/second',),
-
-                _buildButtonColumn(context,Colors.blue, Icons.add, 'add new tab','/third'),
+              children:[
+                Expanded(child:
+               _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'Le tue preferite','/fifth',),),
+                Expanded(child:
+                _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'find a tab','/second',),),
+                Expanded(child:
+                _buildButtonColumn(context,Colors.blue, Icons.add, 'add new tab','/third',),),]),
 
 
-                _buildButtonColumn(context,Colors.blue, Icons.share, 'SHARE this app','/fourth'),
-              ]))),
-        
+          Row(mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment:CrossAxisAlignment.center,
+              children:[
+              Expanded(child:
+              _buildButtonColumn(context,Colors.blue, Icons.share, 'SHARE this app','/fourth',),),
+           ]),
 
-            Positioned( child: new Align(
-                        alignment:Alignment(0,-0.5),
-                        child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                //implements on tap for every botton
-                                   _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'Crea nuovo evento','/newevent',),
-
-                                   _buildButtonColumn(context,Colors.blue, Icons.add, 'unisciti ','/addtoevent'),
-
-
-                                    _buildButtonColumn(context,Colors.blue, Icons.share, 'Partecipa a un evento','/gotoevent'),
-              ]))),
+          Row(mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children:[
+                Expanded(child:
+            _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'Crea nuovo evento','/newevent',),),
+              Expanded(child:
+            _buildButtonColumn(context,Colors.blue, Icons.add, 'unisciti ','/addtoevent',),),
+             Expanded(child:
+            _buildButtonColumn(context,Colors.blue, Icons.share, 'Partecipa a un evento','/gotoevent',),),
+            ]),
           
         ]);
 
@@ -103,18 +99,18 @@ class _HomePageState extends State<HomePage> {
               ),
 
 
-              body: Stack (
-                    
+              body:  Column(
                   children: [
                     
                     titleSection,
                     button2Container,
-                    Text(
+                   Expanded(
+                     child:Text(
                       widget.user.email ,
                       style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
-                    )
+                    ),),
                   ]
 
               ),
@@ -143,7 +139,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Text(
-                  'Bentornato',
+                  'Bentornato   '+Utente.user.email ,
                   style: TextStyle(
                     color: Colors.grey[500],
                   ),
@@ -162,10 +158,11 @@ class _HomePageState extends State<HomePage> {
 
 
 
- GestureDetector _buildButtonColumn(BuildContext a,Color color, IconData icon, String label,String route,) {
+ GestureDetector _buildButtonColumn(BuildContext a,Color color, IconData icon, String label,String route) {
  return GestureDetector(
     onTap: (){
        Navigator.pushNamed(a, route,);
+
     },
     child: Column(
      mainAxisSize: MainAxisSize.min,

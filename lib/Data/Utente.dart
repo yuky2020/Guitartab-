@@ -1,6 +1,15 @@
+
+import 'package:firebase_auth/firebase_auth.dart';
+
 class Utente {
-  String nome;
-  String cognome;
-  String mail ;
+    static FirebaseUser user;
+   void setUser(FirebaseUser usesr){
+     user=usesr ;
+
+   }
+
+   FirebaseUser getUser(){
+     return user;
+}
 
 }

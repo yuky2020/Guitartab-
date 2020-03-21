@@ -1,5 +1,7 @@
 import 'package:GuitarTab/Auth/Auth.dart';
+import 'package:GuitarTab/Data/Utente.dart';
 import 'package:GuitarTab/Pages/HomePage.dart';
+import 'package:GuitarTab/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -51,6 +53,7 @@ class _LoginPageState extends State<LoginPage> {
     {
         authHandler.handleSignInEmail(emailController.text, passwordController.text).then((FirebaseUser user) {
           if(user!=null){
+            new Utente().setUser(user);
          Navigator.push(context, new MaterialPageRoute(builder: (context) => new HomePage(user: user)));}
           else{Navigator.push(context, new MaterialPageRoute(builder: (context) => new LoginPage(error:'Credenziali non valide')));}
    }).catchError((e) => print(e));
@@ -68,6 +71,7 @@ class _LoginPageState extends State<LoginPage> {
         {
           authHandler.handleSignUp(emailController.text, passwordController.text).then((FirebaseUser user) {
             if(user!=null){
+
               Navigator.push(context, new MaterialPageRoute(builder: (context) => new HomePage(user: user)));}
             else{Navigator.push(context, new MaterialPageRoute(builder: (context) => new LoginPage(error:'Account gia esistente ')));}
           }).catchError((e) => print(e));

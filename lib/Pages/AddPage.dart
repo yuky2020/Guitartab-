@@ -2,6 +2,7 @@
 import 'dart:core';
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,10 +10,12 @@ import 'package:flutter/widgets.dart';
 import 'dart:async';
 import '../Data/Tabulatura.dart';
 import 'package:path_provider/path_provider.dart';
-import '../Services/ContactService.dart';
+import '../Services/TabService.dart';
 
 
  class  AddPage extends StatefulWidget {
+   final   FirebaseUser user;
+   AddPage({Key key,@required this.user}):super(key :key);
   @override
   _AddPageState createState() => _AddPageState();
 }
@@ -22,7 +25,7 @@ class _AddPageState extends State<AddPage> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   List<String> _capo = <String>['','0', '1', '2', '3', '4','5','6','7','8','9','10','11','12','13','14','15'];
   String _color = '';
-  Tabulatura newContact=new Tabulatura();
+  Tabulatura newTab=new Tabulatura();
 
    @override
    Widget build(BuildContext context) {
@@ -63,7 +66,7 @@ class _AddPageState extends State<AddPage> {
           ),
           inputFormatters: [new LengthLimitingTextInputFormatter(30)],
           validator: (val) => val.isEmpty ? 'Name is required' : null,
-          onSaved: (val) => newContact.title = val,
+          onSaved: (val) => newTab.title = val,
 
         ),
         new Row(children: <Widget>[
@@ -78,7 +81,7 @@ class _AddPageState extends State<AddPage> {
 
                 validator: (val) => val.isEmpty ? 'Artist is requied':null,
 
-            onSaved: (val) => newContact.artist = val,
+            onSaved: (val) => newTab.artist = val,
           )),
 
 
@@ -97,8 +100,8 @@ class _AddPageState extends State<AddPage> {
           ],
           validator: (value) => true
               ? null
-              : 'Phone number must be entered as (###)###-####',
-          onSaved: (val) => newContact.tuning = val,
+              : 'tab ',
+          onSaved: (val) => newTab.tuning = val,
         ),
         new TextFormField(
           decoration: const InputDecoration(
@@ -112,7 +115,7 @@ class _AddPageState extends State<AddPage> {
           validator: (value) => true
               ? null
               : 'Please enter a valid email address',
-          onSaved: (val) => newContact.testo = val,
+          onSaved: (val) => newTab.testo = val,
         ),
         new FormField<String>(
           builder: (FormFieldState<String> state) {
@@ -129,7 +132,7 @@ class _AddPageState extends State<AddPage> {
                   isDense: true,
                   onChanged: (String newValue) {
                     setState(() {
-                      newContact.capo = newValue;
+                      newTab.capo = newValue;
                       _color = newValue;
                       state.didChange(newValue);
                     });
@@ -153,6 +156,9 @@ class _AddPageState extends State<AddPage> {
             child: new RaisedButton(
               child: const Text('Submit'),
               onPressed: _submitForm,
+
+
+
                                         )),
                               ],
                             )))
@@ -183,24 +189,28 @@ class _AddPageState extends State<AddPage> {
                   if (!form.validate()) {
                     showMessage('Form is not valid!  Please review and correct.');
                   } else {
-                    localSave(newContact);
+                    localSave(newTab);
                                         form.save(); //This invokes each onSaved event
                                   
                                         print('Form save called, newTab is now up to date...');
-                                        print('Title: ${newContact.title}');
-                                        print('artist: ${newContact.artist}');
-                                        print('tuning: ${newContact.tuning}');
-                                        print('testo: ${newContact.testo}');
-                                        print('Capo: ${newContact.capo}');
+                                        print('user:${widget.user.email} ');
+                                        print('Title: ${newTab.title}');
+                                        print('artist: ${newTab.artist}');
+                                        print('tuning: ${newTab.tuning}');
+                                        print('testo: ${newTab.testo}');
+                                        print('Capo: ${newTab.capo}');
                                         print('========================================');
                                         print('Submitting to back end...');
                                         
-                                        var contactService = new ContactService();
-                                        contactService.createContact(newContact)
+                                        var tabService = new TabService();
+                                        tabService.createTab(newTab,widget.user)
                                         .then((value) => 
                                           showMessage('New Tab created for ${value.title}!', Colors.blue)
+
                                         );
-                                      }
+                                        Navigator.pushNamed(this.context,"/homePage",);
+
+                  }
                                     }
                                   
                                   
