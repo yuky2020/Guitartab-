@@ -31,7 +31,7 @@ void main() {
               '/third': (context) => new AddPage(user:Utente.user),
               '/fourth':(context) => SharePage(),
               '/fifth':(context) => SerchLocalPage(),
-              '/newevent':(context) =>AddEvent(),
+              '/newevent':(context) =>new AddEvent(user:Utente.user),
               '/addtoevent': (context) =>AddToEvent()
 
        

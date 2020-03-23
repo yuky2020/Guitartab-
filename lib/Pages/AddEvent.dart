@@ -3,15 +3,19 @@
 import 'dart:io';
 
 import 'package:GuitarTab/Services/EventService.dart' as prefix0;
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
-
-import '../Services/TabService.dart';
 import '../Data/Evento.dart';
+import '../Accessori/datetime_picker_formfield.dart';
+
+
 
 class  AddEvent extends StatefulWidget {
+  final   FirebaseUser user;
+  AddEvent({Key key,@required this.user}):super(key :key);
   @override
   _AddEventState createState() => _AddEventState();
 }
@@ -20,6 +24,7 @@ class _AddEventState extends State<AddEvent> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   String _color = '';
+ final dateFormat = DateFormat("EEEE, MMMM d, yyyy 'at' h:mma");
   Evento nuovoEvento=new Evento();
 
   @override
@@ -65,6 +70,28 @@ class _AddEventState extends State<AddEvent> {
                           onSaved: (val) => nuovoEvento.nomeEvento= val,
 
                         ),
+
+                        new TextFormField(
+
+                          decoration: const InputDecoration(
+                            icon: const Icon(Icons.home),
+                            hintText: 'Inserisci il luogo dell evento',
+                            labelText: 'Luogo',
+
+
+                          ),
+                          inputFormatters: [new LengthLimitingTextInputFormatter(30)],
+                          validator: (val) => val.isEmpty ? 'luogo richiesto' : null,
+                          onSaved: (val) => nuovoEvento.luogo=val,
+
+                        ),
+                        DateTimeField(
+                          format: dateFormat,
+                          decoration: InputDecoration(labelText: 'Date'),
+                          onChanged: (dt) => setState(() =>nuovoEvento.data= dt),
+                        ),
+                        SizedBox(height: 16.0),
+
                         new Row(children: <Widget>[
                           new Expanded(
                               child: new TextFormField(
@@ -127,7 +154,7 @@ class _AddEventState extends State<AddEvent> {
       
 
       var EventService = new prefix0.EventService();
-      EventService.createEvent(nuovoEvento)
+      EventService.createEvent(nuovoEvento,widget.user)
           .then((value) =>
           showMessage('New Event created ${value.nomeEvento}!', Colors.blue)
       );
