@@ -6,9 +6,10 @@ class EventService {
  
 
   Future<Evento> createEvent(Evento evento,FirebaseUser creator) async {
+    evento.creator=creator;
     evento.utentiPartecipanti=new List();
     evento.utentiOsservanti=new List();
-    evento.utentiPartecipanti.add(creator.email);
+    evento.utentiPartecipanti.add(evento.creator.email);
     final databaseReference = FirebaseDatabase.instance.reference();
     DatabaseReference eventData= databaseReference.child("Event");
     eventData.child(evento.nomeEvento).set({
