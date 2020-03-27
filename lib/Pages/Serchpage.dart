@@ -1,9 +1,10 @@
+import 'package:GuitarTab/Services/TabService.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 class SerchPage extends StatelessWidget {
 
-  final databaseReference = FirebaseDatabase.instance.reference();
+  final databaseReference = FirebaseDatabase.instance.reference().child("tabs");
 
 
   @override
@@ -11,7 +12,7 @@ class SerchPage extends StatelessWidget {
     getData();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Firebase Connect'),
+        title: Text('Trova Tab'),
       ),
       body: Center(
           child: Column(
@@ -45,10 +46,11 @@ class SerchPage extends StatelessWidget {
 
 
   void getData(){
-    databaseReference.once().then((DataSnapshot snapshot) {
-      print('Data : ${snapshot.value}');
-    });
-  }
+    TabService a= new TabService();
+    a.showTabs();
+
+    }
+
 
   void updateData(){
     databaseReference.child('1').update({

@@ -14,6 +14,7 @@ import '../Accessori/datetime_picker_formfield.dart';
 
 
 class  AddEvent extends StatefulWidget {
+ final format = DateFormat("yyyy-MM-dd HH:mm");
   final   FirebaseUser user;
   AddEvent({Key key,@required this.user}):super(key :key);
   @override
@@ -23,7 +24,6 @@ class  AddEvent extends StatefulWidget {
 class _AddEventState extends State<AddEvent> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-  String _color = '';
  final dateFormat = DateFormat("EEEE, MMMM d, yyyy 'at' h:mma");
   Evento nuovoEvento=new Evento();
 
@@ -85,12 +85,33 @@ class _AddEventState extends State<AddEvent> {
                           onSaved: (val) => nuovoEvento.luogo=val,
 
                         ),
-                        DateTimeField(
-                          format: dateFormat,
-                          decoration: InputDecoration(labelText: 'Date'),
-                          onChanged: (dt) => setState(() =>nuovoEvento.data= dt),
-                        ),
-                        SizedBox(height: 16.0),
+
+            Column(children: <Widget>[
+              Text('inserisci data evento (${widget.format.pattern})'),
+
+              DateTimeField(
+                  format: widget.format,
+                 onShowPicker: (context, currentValue) async {
+                    final date = await showDatePicker(
+                        context: context,
+                        firstDate: DateTime(1900),
+                        initialDate: currentValue ?? DateTime.now(),
+                        lastDate: DateTime(2100));
+                        if (date != null) {
+                        final time = await showTimePicker(
+                          context: context,
+                        initialTime:
+                        TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
+                      );
+                      return DateTimeField.combine(date, time);
+                    } else {
+                      return currentValue;
+                    }
+                  },
+                  onSaved: (onShowPiker) => nuovoEvento.data =onShowPiker,
+              ),
+            ]),
+
 
                         new Row(children: <Widget>[
                           new Expanded(
@@ -150,9 +171,7 @@ class _AddEventState extends State<AddEvent> {
     } else {
       localSave(nuovoEvento);
       form.save(); //This invokes each onSaved event
-
-      
-
+      print('data di sto cazzo di evento:${nuovoEvento.data.toString()} ');
       var EventService = new prefix0.EventService();
       EventService.createEvent(nuovoEvento,widget.user)
           .then((value) =>
@@ -173,6 +192,7 @@ class _AddEventState extends State<AddEvent> {
 
 
   final TextEditingController _controller = new TextEditingController();
+  
   Future _chooseDate(BuildContext context, String initialDateString) async {
     var now = new DateTime.now();
     var initialDate = convertToDate(initialDateString) ?? now;

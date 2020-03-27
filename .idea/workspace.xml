@@ -6,11 +6,26 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b67f4aac-73a3-49ef-8f41-daa6fc8638e9" name="Default Changelist" comment="testing on json">
+      <change afterPath="$PROJECT_DIR$/lib/Apifirestore/Api.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/viewmodels/CRUDModel.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/viewmodels/CRUDModelEvent.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Data/Evento.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Data/Evento.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Data/Tabulatura.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Data/Tabulatura.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Pages/AddEvent.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/AddEvent.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Pages/Serchpage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/Serchpage.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Services/EventService.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Services/EventService.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Services/TabService.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Services/TabService.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,19 +118,20 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/android/app" />
+      <recent name="C:\Users\yuky2\Desktop\untitled1\lib" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/lib/Data" />
       <recent name="$PROJECT_DIR$/lib/Pages" />
       <recent name="$PROJECT_DIR$/lib/Services" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/android/app" />
-      <recent name="C:\Users\yuky2\Desktop\untitled1\lib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -172,17 +188,10 @@
       <workItem from="1581175179459" duration="11000" />
       <workItem from="1584615697598" duration="54000" />
       <workItem from="1584615807564" duration="5100000" />
+      <workItem from="1584997641715" duration="101000" />
+      <workItem from="1585162852117" duration="552000" />
     </task>
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -192,7 +201,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -219,22 +230,22 @@
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state x="743" y="278" width="424" height="547" key="FileChooserDialogImpl/0.28.1920.1052@0.28.1920.1052" timestamp="1578588512996" />
-    <state width="1870" height="186" key="GridCell.Tab.0.bottom" timestamp="1584641104530">
+    <state width="1870" height="186" key="GridCell.Tab.0.bottom" timestamp="1584997742973">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1870" height="186" key="GridCell.Tab.0.bottom/0.28.1920.1052@0.28.1920.1052" timestamp="1584641104530" />
-    <state width="1870" height="186" key="GridCell.Tab.0.center" timestamp="1584641104529">
+    <state width="1870" height="186" key="GridCell.Tab.0.bottom/0.28.1920.1052@0.28.1920.1052" timestamp="1584997742973" />
+    <state width="1870" height="186" key="GridCell.Tab.0.center" timestamp="1584997742973">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1870" height="186" key="GridCell.Tab.0.center/0.28.1920.1052@0.28.1920.1052" timestamp="1584641104529" />
-    <state width="1870" height="186" key="GridCell.Tab.0.left" timestamp="1584641104529">
+    <state width="1870" height="186" key="GridCell.Tab.0.center/0.28.1920.1052@0.28.1920.1052" timestamp="1584997742973" />
+    <state width="1870" height="186" key="GridCell.Tab.0.left" timestamp="1584997742973">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1870" height="186" key="GridCell.Tab.0.left/0.28.1920.1052@0.28.1920.1052" timestamp="1584641104529" />
-    <state width="1870" height="186" key="GridCell.Tab.0.right" timestamp="1584641104529">
+    <state width="1870" height="186" key="GridCell.Tab.0.left/0.28.1920.1052@0.28.1920.1052" timestamp="1584997742973" />
+    <state width="1870" height="186" key="GridCell.Tab.0.right" timestamp="1584997742973">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1870" height="186" key="GridCell.Tab.0.right/0.28.1920.1052@0.28.1920.1052" timestamp="1584641104529" />
+    <state width="1870" height="186" key="GridCell.Tab.0.right/0.28.1920.1052@0.28.1920.1052" timestamp="1584997742973" />
     <state x="543" y="300" width="824" height="504" key="IDE.errors.dialog" timestamp="1578678626616">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
@@ -243,10 +254,10 @@
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state x="464" y="189" key="SettingsEditor/0.28.1920.1052@0.28.1920.1052" timestamp="1578060887094" />
-    <state x="637" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1584619645165">
+    <state x="637" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1585162852879">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state x="637" y="381" key="com.intellij.ide.util.TipDialog/0.28.1920.1052@0.28.1920.1052" timestamp="1584619645165" />
+    <state x="637" y="381" key="com.intellij.ide.util.TipDialog/0.28.1920.1052@0.28.1920.1052" timestamp="1585162852879" />
     <state x="753" y="245" width="414" height="613" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578680948384">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>

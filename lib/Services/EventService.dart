@@ -18,7 +18,7 @@ class EventService {
       'scaletta': evento.scaletta,
       'partcipanti': evento.numeroOsservanti,
       'UtentiPartecipanti': evento.utentiPartecipanti,
-      'data': evento.data,
+      'data': evento.data.toString(),
       'creator':evento.creator.email,
       'UtentiOsservanti': evento.utentiOsservanti,
 
