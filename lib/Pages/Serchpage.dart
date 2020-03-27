@@ -1,6 +1,8 @@
+import 'package:GuitarTab/Data/Tabulatura.dart';
 import 'package:GuitarTab/Services/TabService.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:GuitarTab/Pages/TabulaturaView.dart'
 
 class SerchPage extends StatelessWidget {
 
@@ -14,51 +16,45 @@ class SerchPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Trova Tab'),
       ),
-      body: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
+      body: Container(
+        child:FutureBuilder(
+        future: getData(),
+        builder:  (BuildContext  context, AsyncSnapshot snapshot){
+          if(snapshot.data ==null ){
+            return Container(
+              child:Center(
+                child:Text("Loading....")
+            )
+            );}
+          else{ 
+               return ListView.builder(
+                 itemCount: snapshot.data.length,
+                 itemBuilder:(BuildContext context ,int index){
+                   return ListTile(
+                     title: Text(snapshot.data[index].title),
+                     subtitle: Text(snapshot.data[index].artist),
+                     onTap: Navigator.
+                     TabulaturaView( tabulatura: snapshot.data[index]),
+                     
+                     
+                     );
+                 },
+                 
 
+                                            );
+                                            }}
 
-              RaisedButton(
-                child: Text('View Record'),
-                onPressed: () {
-                  getData();
-                },
-              ),
-              RaisedButton(
-                child: Text('Udate Record'),
-                onPressed: () {
-                  updateData();
-                },
-              ),
-              RaisedButton(
-                child: Text('Delete Record'),
-                onPressed: () {
-                  deleteData();
-                },
-              ),
-            ],
-          )
+      ),
       ), //center
     );
   }
 
 
-  void getData(){
-    TabService a= new TabService();
-    a.showTabs();
-
-    }
 
 
-  void updateData(){
-    databaseReference.child('1').update({
-      'description': 'J2EE complete Reference'
-    });
+  Future<List<Tabulatura>> getData() {
+    TabService a = new TabService();
+    return a.showTabs();
   }
 
-  void deleteData(){
-    databaseReference.child('1').remove();
-  }
 }

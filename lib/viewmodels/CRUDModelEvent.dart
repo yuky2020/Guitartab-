@@ -23,24 +23,25 @@ class CRUDModelEvent extends ChangeNotifier {
 
   Future<Evento> getEventoById(String id) async {
     var doc = await _api.getDocumentById(id);
-    return  Evento.fromMap(doc.data, doc.documentID) ;
+    return Evento.fromMap(doc.data, doc.documentID);
   }
 
 
-  Future removeEvento(String id) async{
-    await _api.removeDocument(id) ;
+  Future removeEvento(String id) async {
+    await _api.removeDocument(id);
+    return;
+  }
+
+  Future updateEvento(Evento data, String id) async {
+    await _api.updateDocument(data.toJson(), id);
+    return;
+  }
+
+  Future addEvento(Evento data) async {
+    var result = await _api.addDocument(data.toJson());
+
     return ;
   }
-  Future updateEvento(Evento data,String id) async{
-    await _api.updateDocument(data.toJson(), id) ;
-    return ;
-  }
-
-  Future addEvento(Evento data) async{
-    var result  = await _api.addDocument(data.toJson()) ;
-
-    return ;
-
-  }
+}
 
 

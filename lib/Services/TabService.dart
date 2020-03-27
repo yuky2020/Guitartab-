@@ -12,19 +12,16 @@ import 'package:intl/intl.dart';
 import '../Pages/AddPage.dart';
 class TabService {
 
-
+  static CRUDModel a = new CRUDModel();
   Future<Tabulatura> createTab(Tabulatura tab, FirebaseUser user) async {
     tab.creator = user.email;
-    CRUDModel a = new CRUDModel();
+
     a.addTabs(tab);
     return tab;
   }
 
-  Future<List> showTabs() async {
-    List wow;
-
-
-    return wow;
+  Future<List<Tabulatura>> showTabs() async {
+    return a.fetchTabs();
   }
 
 

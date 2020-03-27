@@ -2,8 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 
 class Evento{
-  Evento(){this.numeroOsservanti=0;}
-  FirebaseUser creator;
+
+  String id;
+  String creator;
   DateTime data=DateTime.now();
   String nomeEvento;
   String scaletta;
@@ -12,26 +13,28 @@ class Evento{
   List<String> utentiOsservanti;
   int numeroOsservanti;
 
-
+  Evento(){this.numeroOsservanti=0;}
 
   Evento.fromMap(Map snapshot,String id) :
         id = id ?? '',
-        title = snapshot['title'] ?? '',
-        artist = snapshot['artist'] ?? '',
-        tuning = snapshot['tuning'] ?? '',
-        capo  =  snapshot['capo'] ?? '' ,
-        creator  =  snapshot['creator'] ?? '' ,
-        testo  = snapshot['testo']  ?? '';
+        creator = snapshot['creator'] ?? '',
+        data = snapshot['data'] ?? '',
+        nomeEvento= snapshot['nomeEvento'] ?? '',
+        luogo  =  snapshot['luogo'] ?? '' ,
+        utentiPartecipanti  =  snapshot['utentiPartecipanti'] ?? '' ,
+        utentiOsservanti  = snapshot['utentiOsservanti']  ?? '',
+        numeroOsservanti =snapshot['numeroOsservanti'] ??'';
 
 
   toJson() {
     return {
-      "title" : title,
-      "artist" : artist,
-      "tuning" : tuning ,
-      "capo"   : capo,
       "creator" : creator,
-      "testo"  :testo,
+      "data" : data,
+      "nomeEvento" : nomeEvento ,
+      "luogo"   : luogo,
+      "utentiPartecipanti" : utentiPartecipanti,
+      "utentiOsservanti"  : utentiOsservanti,
+      "numeroOsservanti"  : numeroOsservanti ,
     };
   }
 
