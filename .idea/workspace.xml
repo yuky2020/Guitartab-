@@ -11,15 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b67f4aac-73a3-49ef-8f41-daa6fc8638e9" name="Default Changelist" comment="testing on json">
-      <change afterPath="$PROJECT_DIR$/lib/Pages/TabulaturaView.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Pages/EventView.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Data/Evento.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Data/Evento.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Pages/AddEvent.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/AddEvent.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Pages/GoToEvent.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/GoToEvent.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Pages/Serchpage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/Serchpage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Pages/TabulaturaView.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/TabulaturaView.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Services/EventService.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Services/EventService.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Services/TabService.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Services/TabService.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/viewmodels/CRUDModelEvent.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/viewmodels/CRUDModelEvent.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +113,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Dart" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">

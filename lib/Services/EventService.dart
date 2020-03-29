@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 class EventService {
+  final CRUDModelEvent crudEventi =  new CRUDModelEvent();
  
 
   Future<Evento> createEvent(Evento evento,FirebaseUser creator) async {
@@ -11,10 +12,14 @@ class EventService {
     evento.utentiPartecipanti=new List();
     evento.utentiOsservanti=new List();
     evento.utentiPartecipanti.add(evento.creator);
-    CRUDModelEvent a= new CRUDModelEvent();
-    a.addEvento(evento);
+    crudEventi.addEvento(evento);
 
 
     return evento ;
     }
+
+    Future<List<Evento>> showEvents() {
+      return crudEventi.fetchEvent();
+    }
+
   }

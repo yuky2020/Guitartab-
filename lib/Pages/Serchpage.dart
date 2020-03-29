@@ -2,13 +2,12 @@ import 'package:GuitarTab/Data/Tabulatura.dart';
 import 'package:GuitarTab/Services/TabService.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:GuitarTab/Pages/TabulaturaView.dart'
+import 'package:GuitarTab/Pages/TabulaturaView.dart' ;
+
 
 class SerchPage extends StatelessWidget {
 
   final databaseReference = FirebaseDatabase.instance.reference().child("tabs");
-
-
   @override
   Widget build(BuildContext context) {
     getData();
@@ -33,8 +32,8 @@ class SerchPage extends StatelessWidget {
                    return ListTile(
                      title: Text(snapshot.data[index].title),
                      subtitle: Text(snapshot.data[index].artist),
-                     onTap: Navigator.
-                     TabulaturaView( tabulatura: snapshot.data[index]),
+                     onTap: (){ Navigator.push(context, new MaterialPageRoute(builder: (context) => new TabulaturaView(tabulatura: snapshot.data[index])));}
+
                      
                      
                      );

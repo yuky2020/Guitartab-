@@ -1,4 +1,6 @@
+
 import 'package:GuitarTab/Pages/AddEvent.dart';
+import 'package:GuitarTab/Pages/GoToEvent.dart';
 import 'package:flutter/material.dart';
 
 
@@ -31,7 +33,8 @@ void main() {
               '/fourth':(context) => SharePage(),
               '/fifth':(context) => SerchLocalPage(),
               '/newevent':(context) =>new AddEvent(user:Utente.user),
-              '/addtoevent': (context) =>AddToEvent()
+              '/addtoevent': (context) =>AddToEvent(),
+              '/gotoevent' : (context) =>GoToEvent(),
 
        
             }, ));

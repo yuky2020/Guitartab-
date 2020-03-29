@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 
@@ -9,8 +10,8 @@ class Evento{
   String nomeEvento;
   String scaletta;
   String luogo; //penso che il luogo si possa indicare meglio
-  List<String> utentiPartecipanti;
-  List<String> utentiOsservanti;
+  List utentiPartecipanti;
+  List utentiOsservanti;
   int numeroOsservanti;
 
   Evento(){this.numeroOsservanti=0;}
@@ -18,7 +19,7 @@ class Evento{
   Evento.fromMap(Map snapshot,String id) :
         id = id ?? '',
         creator = snapshot['creator'] ?? '',
-        data = snapshot['data'] ?? '',
+        data = (snapshot['data'] as Timestamp).toDate() ?? '',
         nomeEvento= snapshot['nomeEvento'] ?? '',
         luogo  =  snapshot['luogo'] ?? '' ,
         utentiPartecipanti  =  snapshot['utentiPartecipanti'] ?? '' ,

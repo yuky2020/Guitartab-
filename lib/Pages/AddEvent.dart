@@ -3,6 +3,7 @@
 import 'dart:io';
 
 import 'package:GuitarTab/Services/EventService.dart' as prefix0;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
