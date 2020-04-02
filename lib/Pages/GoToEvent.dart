@@ -1,16 +1,29 @@
 import 'package:GuitarTab/Data/Evento.dart';
 import 'package:GuitarTab/Services/EventService.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'EventView.dart';
 
 class GoToEvent extends StatelessWidget {
+  final   FirebaseUser user;
+  GoToEvent({Key key,@required this.user}):super(key :key);
+
   @override
   Widget build(BuildContext context) {
     getData();
-    return Scaffold(
+    return MaterialApp(
+        title: "Eventi vicino a te ",
+        theme: new ThemeData(
+            brightness: Brightness.dark
+          //  primarySwatch: Colors.blue,
+          //backgroundColor: Colors.black87,
+          //primaryColor: Colors.black87,
+
+        ),
+        home:Scaffold(
       appBar: AppBar(
-        title: Text('Eventi vicino a te'),
+        title: Text("Eventi vicino a te"),
       ),
       body: Container(
         child:FutureBuilder(
@@ -29,7 +42,7 @@ class GoToEvent extends StatelessWidget {
                     return ListTile(
                         title: Text(snapshot.data[index].nomeEvento),
                         subtitle: Text(snapshot.data[index].luogo),
-                        onTap: (){ Navigator.push(context, new MaterialPageRoute(builder: (context) => new EventView(evento: snapshot.data[index])));}
+                        onTap: (){ Navigator.push(context, new MaterialPageRoute(builder: (context) => new EventView(evento: snapshot.data[index],user: user,)));}
 
 
 
@@ -42,7 +55,7 @@ class GoToEvent extends StatelessWidget {
 
         ),
       ), //center
-    );
+    ));
   }
 
 

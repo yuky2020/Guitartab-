@@ -11,13 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b67f4aac-73a3-49ef-8f41-daa6fc8638e9" name="Default Changelist" comment="testing on json">
-      <change afterPath="$PROJECT_DIR$/lib/Pages/EventView.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Pages/MyListViewer.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Data/Evento.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Data/Evento.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Pages/AddEvent.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/AddEvent.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Pages/AddToEvent.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/AddToEvent.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Pages/EventView.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/EventView.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Pages/GoToEvent.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/GoToEvent.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Pages/LoginPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/LoginPage.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Pages/Serchpage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/Serchpage.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Pages/TabulaturaView.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/TabulaturaView.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Pages/ViewPage.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Pages/serchlocal.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/serchlocal.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Services/EventService.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Services/EventService.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
     </list>

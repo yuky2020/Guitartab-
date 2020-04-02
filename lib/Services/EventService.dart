@@ -22,4 +22,27 @@ class EventService {
       return crudEventi.fetchEvent();
     }
 
+
+    void aggiungiPartecipante(String mail , Evento evento){
+   List<String> temp = new List();
+   for(String a in evento.utentiPartecipanti){
+     temp.add(a);
+   }
+    temp.add(mail);
+    evento.utentiPartecipanti=temp;
+    crudEventi.updateEvento(evento, evento.id);
+    }
+
+  void aggiungiPublico(String mail , Evento evento){
+    List<String> temp = new List();
+    for(String a in evento.utentiOsservanti){
+    temp.add(a);}
+    temp.add(mail);
+    evento.utentiOsservanti=temp;
+    evento.numeroOsservanti++;
+    crudEventi.updateEvento(evento, evento.id);
+  }
+
+
+
   }

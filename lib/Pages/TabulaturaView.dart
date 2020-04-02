@@ -6,7 +6,16 @@ class TabulaturaView extends StatelessWidget{
   TabulaturaView({Key key,@required this.tabulatura}):super(key :key);
   @override
   Widget build(BuildContext context){
-      return new Scaffold(
+      return new MaterialApp(
+
+          theme: new ThemeData(
+          brightness: Brightness.dark
+          //  primarySwatch: Colors.blue,
+          //backgroundColor: Colors.black87,
+          //primaryColor: Colors.black87,
+
+      ),
+    home:Scaffold(
           appBar: AppBar(
           title: Text(tabulatura.title ),
       ),
@@ -52,7 +61,7 @@ class TabulaturaView extends StatelessWidget{
 
          ]) ))
 
-      );
+      ));
 
 
   }

@@ -8,10 +8,19 @@ class  SerchLocalPage extends StatefulWidget {
 class _SerchLocalPageState extends State<SerchLocalPage> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return MaterialApp(
+        title: "Eventi vicino a te ",
+        theme: new ThemeData(
+        brightness: Brightness.dark
+        //  primarySwatch: Colors.blue,
+        //backgroundColor: Colors.black87,
+        //primaryColor: Colors.black87,
+
+    ),
+    home: Scaffold(
         appBar: AppBar(title: Text('ListTile guide')),
         body: BodyWidget(),
-      );}}
+      ));}}
   
 
 String horseUrl = 'https://i.stack.imgur.com/Dw6f7.png';   

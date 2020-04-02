@@ -20,9 +20,17 @@ class _LoginPageState extends State<LoginPage> {
   final passwordController= TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+        title: "Eventi vicino a te ",
+        theme: new ThemeData(
+        brightness: Brightness.dark
+        //  primarySwatch: Colors.blue,
+        //backgroundColor: Colors.black87,
+        //primaryColor: Colors.black87,
+
+    ),
+    home: Scaffold(
       body: Container(
-        color: Colors.white,
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -92,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
-    );
+    ));
   }
 
   

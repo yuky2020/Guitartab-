@@ -34,7 +34,7 @@ void main() {
               '/fifth':(context) => SerchLocalPage(),
               '/newevent':(context) =>new AddEvent(user:Utente.user),
               '/addtoevent': (context) =>AddToEvent(),
-              '/gotoevent' : (context) =>GoToEvent(),
+              '/gotoevent' : (context) => new GoToEvent(user: Utente.user,),
 
        
             }, ));

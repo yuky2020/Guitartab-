@@ -11,7 +11,16 @@ class SerchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     getData();
-    return Scaffold(
+    return MaterialApp(
+        title: "Eventi vicino a te ",
+        theme: new ThemeData(
+        brightness: Brightness.dark
+        //  primarySwatch: Colors.blue,
+        //backgroundColor: Colors.black87,
+        //primaryColor: Colors.black87,
+
+    ),
+    home:Scaffold(
       appBar: AppBar(
         title: Text('Trova Tab'),
       ),
@@ -45,7 +54,7 @@ class SerchPage extends StatelessWidget {
 
       ),
       ), //center
-    );
+    ));
   }
 
 

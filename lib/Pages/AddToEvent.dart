@@ -19,6 +19,10 @@ class _AddToEventState extends State<AddToEvent> {
   Widget build(BuildContext context) {
 
     return new MaterialApp(
+        theme: new ThemeData(
+            brightness: Brightness.dark
+          //  primarySwatch: Colors.purple;
+        ),
 
       home :DefaultTabController(
   length: 3,
