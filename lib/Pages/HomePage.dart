@@ -192,40 +192,6 @@ class _HomePageState extends State<HomePage> {
 
  
 
-
-
-
-
-
-
- class  SharePage extends StatefulWidget {
-  @override
-  _SharePageState createState() => _SharePageState();
-}
-
-class _SharePageState extends State<SharePage> {
-   @override
-   Widget build(BuildContext context) {
-     return Scaffold(
-       appBar: AppBar(
-         title: Text("Second Route"),
-       ),
-       body: Center(
-         child: RaisedButton(
-           onPressed: () {
-             Navigator.pop(context);
-             // Navigate back to first route when tapped.
-           },
-           child: Text('Go back!'),
-         ),
-       ),
-     );
-   }
-}
-
-
-
-
  _launchURL() async {
    const url = 'https://www.matteobianchi.eu';
    if (await canLaunch(url)) {

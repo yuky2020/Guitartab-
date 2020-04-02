@@ -89,14 +89,13 @@ class _AddPageState extends State<AddPage> {
         ]),
         new TextFormField(
           decoration: const InputDecoration(
-            icon: const Icon(Icons.phone),
+            icon: const Icon(Icons.music_note),
             hintText: 'Enter the tuning',
             labelText: 'Tuning',
           ),
           keyboardType: TextInputType.multiline,
           inputFormatters: [
-            new WhitelistingTextInputFormatter(
-                new RegExp(r'^[()\d -]{1,15}$')),
+            new LengthLimitingTextInputFormatter(30),
           ],
           validator: (value) => true
               ? null

@@ -9,6 +9,7 @@ import 'Pages/AddToEvent.dart';
 import 'Pages/HomePage.dart';
 import 'Pages/Serchpage.dart';
 import 'Pages/LoginPage.dart';
+import 'Pages/SharePage.dart';
 import 'Pages/serchlocal.dart';
 import 'Data/Utente.dart';
 

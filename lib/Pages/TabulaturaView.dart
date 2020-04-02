@@ -1,5 +1,6 @@
 import 'package:GuitarTab/Data/Tabulatura.dart';
 import 'package:flutter/material.dart';
+import 'package:marquee/marquee.dart';
 
 class TabulaturaView extends StatelessWidget{
   final Tabulatura tabulatura;
@@ -19,7 +20,7 @@ class TabulaturaView extends StatelessWidget{
           appBar: AppBar(
           title: Text(tabulatura.title ),
       ),
-       body: Center(child: Container(
+       body: Container( child:Center(child: Container(
         child: Column(
          children:[
            Row(children: [
@@ -43,12 +44,11 @@ class TabulaturaView extends StatelessWidget{
               fontWeight: FontWeight.bold,
 
               )),
-           Text(
-            tabulatura.testo ,
-              style: TextStyle(
-               fontWeight: FontWeight.bold,
+           new Expanded(
+               flex: 1,
+               child:SingleChildScrollView(child:Text(tabulatura.testo)
 
-        ),) ,
+           ) ),
            Text(
              tabulatura.creator ,
              style: TextStyle(
@@ -61,7 +61,7 @@ class TabulaturaView extends StatelessWidget{
 
          ]) ))
 
-      ));
+      )));
 
 
   }
