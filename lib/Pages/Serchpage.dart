@@ -5,9 +5,15 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:GuitarTab/Pages/TabulaturaView.dart' ;
 
 
-class SerchPage extends StatelessWidget {
-
+class SerchPage extends StatefulWidget {
+  final searchController=new TextEditingController();
+  String searchString = "";
   final databaseReference = FirebaseDatabase.instance.reference().child("tabs");
+  @override
+  _SerchPageState createState() => _SerchPageState();
+
+}
+class _SerchPageState extends State<SerchPage> {
   @override
   Widget build(BuildContext context) {
     getData();
@@ -25,7 +31,25 @@ class SerchPage extends StatelessWidget {
         title: Text('Trova Tab'),
       ),
       body: Container(
-        child:FutureBuilder(
+
+        child:Column(children:[
+            TextField(
+            onChanged: (value) {
+            setState((){
+             widget.searchString = value;
+      });
+
+      },
+        controller: widget.searchController,
+        decoration: InputDecoration(
+          prefixIcon: Icon(Icons.search),
+        ),
+
+      ),
+
+        new Expanded(
+            flex: 1,
+            child:FutureBuilder(
         future: getData(),
         builder:  (BuildContext  context, AsyncSnapshot snapshot){
           if(snapshot.data ==null ){
@@ -38,24 +62,24 @@ class SerchPage extends StatelessWidget {
                return ListView.builder(
                  itemCount: snapshot.data.length,
                  itemBuilder:(BuildContext context ,int index){
-                   return ListTile(
+                    return snapshot.data[index].title.contains(widget.searchString) ? ListTile(
                      title: Text(snapshot.data[index].title),
                      subtitle: Text(snapshot.data[index].artist),
                      onTap: (){ Navigator.push(context, new MaterialPageRoute(builder: (context) => new TabulaturaView(tabulatura: snapshot.data[index])));}
 
                      
                      
-                     );
+                     ):null;
                  },
                  
 
                                             );
                                             }}
 
-      ),
-      ), //center
+      ),),
+  ])), //center
     ));
-  }
+  }}
 
 
 
@@ -64,5 +88,3 @@ class SerchPage extends StatelessWidget {
     TabService a = new TabService();
     return a.showTabs();
   }
-
-}
