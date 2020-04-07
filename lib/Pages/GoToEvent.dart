@@ -5,10 +5,17 @@ import 'package:flutter/material.dart';
 
 import 'EventView.dart';
 
-class GoToEvent extends StatelessWidget {
+// ignore: must_be_immutable
+class GoToEvent extends StatefulWidget {
+  final searchController=new TextEditingController();
+  String searchString = "";
   final   FirebaseUser user;
   GoToEvent({Key key,@required this.user}):super(key :key);
+  @override
+  _GoToEventState createState() => _GoToEventState();
 
+}
+class _GoToEventState extends State<GoToEvent> {
   @override
   Widget build(BuildContext context) {
     getData();
@@ -26,7 +33,24 @@ class GoToEvent extends StatelessWidget {
         title: Text("Eventi vicino a te"),
       ),
       body: Container(
-        child:FutureBuilder(
+        child: Column(children:[
+      TextField(
+      onChanged: (value) {
+        setState((){
+        widget.searchString = value;
+        });
+
+        },
+          controller: widget.searchController,
+          decoration: InputDecoration(
+            prefixIcon: Icon(Icons.search),
+          ),
+
+        ),
+
+        new Expanded(
+           flex: 1,
+          child: FutureBuilder(
             future: getData(),
             builder:  (BuildContext  context, AsyncSnapshot snapshot){
               if(snapshot.data ==null ){
@@ -39,14 +63,14 @@ class GoToEvent extends StatelessWidget {
                 return ListView.builder(
                   itemCount: snapshot.data.length,
                   itemBuilder:(BuildContext context ,int index){
-                    return ListTile(
+                    return snapshot.data[index].nomeEvento.contains(widget.searchString) ?ListTile(
                         title: Text(snapshot.data[index].nomeEvento),
                         subtitle: Text(snapshot.data[index].luogo),
-                        onTap: (){ Navigator.push(context, new MaterialPageRoute(builder: (context) => new EventView(evento: snapshot.data[index],user: user,)));}
+                        onTap: (){ Navigator.push(context, new MaterialPageRoute(builder: (context) => new EventView(evento: snapshot.data[index],user: widget.user,)));}
 
 
 
-                    );
+                    ):null;
                   },
 
 
@@ -54,9 +78,13 @@ class GoToEvent extends StatelessWidget {
               }}
 
         ),
-      ), //center
-    ));
-  }
+          ), //center
+         ])
+      )
+        )
+    )
+    ;
+  }}
 
 
 
@@ -66,4 +94,3 @@ class GoToEvent extends StatelessWidget {
     return a.showEvents();
   }
 
-}

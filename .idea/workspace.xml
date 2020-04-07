@@ -12,7 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b67f4aac-73a3-49ef-8f41-daa6fc8638e9" name="Default Changelist" comment="testing on json">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Pages/Serchpage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/Serchpage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Pages/GoToEvent.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/GoToEvent.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +60,6 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="36c2914" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
