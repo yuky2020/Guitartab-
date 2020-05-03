@@ -25,13 +25,13 @@ class TabulaturaView extends StatelessWidget{
          children:[
            Row(children: [
                Text(
-               "tuning"+tabulatura.tuning ,
+               "   Tuning   "+tabulatura.tuning+"                            " ,
                style: TextStyle(
                  fontWeight: FontWeight.bold,
 
                )),
                Text(
-                "capo"+tabulatura.capo ,
+                "Capo"+tabulatura.capo ,
                  style: TextStyle(
                   fontWeight: FontWeight.bold,
 
