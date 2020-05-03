@@ -1,0 +1,100 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color pub get
+
+## exception
+
+_CastError: type 'YamlList' is not a subtype of type 'YamlMap' in type cast
+
+```
+#0      _validate (package:flutter_tools/src/flutter_manifest.dart:343:36)
+#1      FlutterManifest._createFromYaml (package:flutter_tools/src/flutter_manifest.dart:45:34)
+#2      FlutterManifest.createFromString (package:flutter_tools/src/flutter_manifest.dart:40:12)
+#3      FlutterManifest.createFromPath (package:flutter_tools/src/flutter_manifest.dart:34:12)
+#4      FlutterProject._readManifest (package:flutter_tools/src/project.dart:191:34)
+#5      FlutterProjectFactory.fromDirectory.<anonymous closure> (package:flutter_tools/src/project.dart:39:55)
+#6      _LinkedHashMapMixin.putIfAbsent (dart:collection-patch/compact_hash.dart:293:23)
+#7      FlutterProjectFactory.fromDirectory (package:flutter_tools/src/project.dart:38:22)
+#8      FlutterProject.fromDirectory (package:flutter_tools/src/project.dart:70:78)
+#9      FlutterProject.fromPath (package:flutter_tools/src/project.dart:78:50)
+#10     PackagesGetCommand.usageValues (package:flutter_tools/src/commands/packages.dart:81:55)
+#11     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:609:21)
+<asynchronous suspension>
+#12     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:515:33)
+<asynchronous suspension>
+#13     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:146:29)
+#14     _rootRun (dart:async/zone.dart:1126:13)
+#15     _CustomZone.run (dart:async/zone.dart:1023:19)
+#16     _runZoned (dart:async/zone.dart:1518:10)
+#17     runZoned (dart:async/zone.dart:1465:12)
+#18     AppContext.run (package:flutter_tools/src/base/context.dart:145:18)
+#19     FlutterCommand.run (package:flutter_tools/src/runner/flutter_command.dart:505:20)
+#20     CommandRunner.runCommand (package:args/command_runner.dart:197:27)
+#21     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:413:21)
+<asynchronous suspension>
+#22     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:146:29)
+#23     _rootRun (dart:async/zone.dart:1126:13)
+#24     _CustomZone.run (dart:async/zone.dart:1023:19)
+#25     _runZoned (dart:async/zone.dart:1518:10)
+#26     runZoned (dart:async/zone.dart:1465:12)
+#27     AppContext.run (package:flutter_tools/src/base/context.dart:145:18)
+#28     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:364:19)
+#29     CommandRunner.run.<anonymous closure> (package:args/command_runner.dart:112:25)
+#30     new Future.sync (dart:async/future.dart:224:31)
+#31     CommandRunner.run (package:args/command_runner.dart:112:14)
+#32     FlutterCommandRunner.run (package:flutter_tools/src/runner/flutter_command_runner.dart:250:18)
+#33     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:63:22)
+#34     _rootRun (dart:async/zone.dart:1126:13)
+#35     _CustomZone.run (dart:async/zone.dart:1023:19)
+#36     _runZoned (dart:async/zone.dart:1518:10)
+#37     runZoned (dart:async/zone.dart:1502:12)
+#38     run.<anonymous closure> (package:flutter_tools/runner.dart:61:18)
+<asynchronous suspension>
+#39     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:146:29)
+#40     _rootRun (dart:async/zone.dart:1126:13)
+#41     _CustomZone.run (dart:async/zone.dart:1023:19)
+#42     _runZoned (dart:async/zone.dart:1518:10)
+#43     runZoned (dart:async/zone.dart:1465:12)
+#44     AppContext.run (package:flutter_tools/src/base/context.dart:145:18)
+#45     runInContext (package:flutter_tools/src/context_runner.dart:64:24)
+#46     run (package:flutter_tools/runner.dart:50:10)
+#47     main (package:flutter_tools/executable.dart:65:9)
+#48     main (file:///C:/b/s/w/ir/k/archive/flutter/packages/flutter_tools/bin/flutter_tools.dart:8:3)
+#49     _startIsolate.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:305:32)
+#50     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:174:12)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, v1.12.13+hotfix.9, on Microsoft Windows [Versione 10.0.18363.815], locale it-IT)
+    • Flutter version 1.12.13+hotfix.9 at C:\flutter
+    • Framework revision f139b11009 (5 weeks ago), 2020-03-30 13:57:30 -0700
+    • Engine revision af51afceb8
+    • Dart version 2.7.2
+
+[!] Android toolchain - develop for Android devices (Android SDK version 29.0.3)
+    • Android SDK at C:\Users\matt\AppData\Local\Android\sdk
+    • Android NDK location not configured (optional; useful for native profiling support)
+    • Platform android-29, build-tools 29.0.3
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_212-release-1586-b04)
+    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
+
+[✓] Android Studio (version 3.6)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin version 45.1.1
+    • Dart plugin version 192.7761
+    • Java version OpenJDK Runtime Environment (build 1.8.0_212-release-1586-b04)
+
+[✓] VS Code (version 1.39.2)
+    • VS Code at C:\Users\matt\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.5.1
+
+[✓] Connected device (1 available)
+    • MI 9 • 36c2914 • android-arm64 • Android 10 (API 29)
+
+! Doctor found issues in 1 category.
+```

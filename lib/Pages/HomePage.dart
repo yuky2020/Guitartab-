@@ -27,29 +27,25 @@ class _HomePageState extends State<HomePage> {
 
               children:[
                 Expanded(child:
-               _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'Le tue preferite','/fifth',),),
-                Expanded(child:
-                _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'find a tab','/second',),),
-                Expanded(child:
-                _buildButtonColumn(context,Colors.blue, Icons.add, 'add new tab','/third',),),]),
-
+                _buildButtonColumn(context,Colors.blue, Icons.share, 'Condvidi questa app','/fourth',),),
+                ]),
 
           Row(mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment:CrossAxisAlignment.center,
+
               children:[
-              Expanded(child:
-              _buildButtonColumn(context,Colors.blue, Icons.share, 'SHARE this app','/fourth',),),
-           ]),
+                Expanded(child:
+                _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'trova una tab','/second',),),
+                Expanded(child:
+                _buildButtonColumn(context,Colors.blue, Icons.add, 'aggiungi tab','/third',),),]),
+
 
           Row(mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.end,
               children:[
                 Expanded(child:
             _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'Crea nuovo evento','/newevent',),),
-              Expanded(child:
-            _buildButtonColumn(context,Colors.blue, Icons.add, 'unisciti ','/addtoevent',),),
              Expanded(child:
-            _buildButtonColumn(context,Colors.blue, Icons.share, 'Partecipa a un evento','/gotoevent',),),
+            _buildButtonColumn(context,Colors.blue, Icons.add, 'Partecipa a un evento','/gotoevent',),),
             ]),
           
         ]);
@@ -103,17 +99,14 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     
                     titleSection,
+                    Image.asset('assets/g-clef.png',height: 150,),//immaggine della nota
                     button2Container,
-                   Expanded(
-                     child:Text(
-                      widget.user.email ,
-                      style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                    ),),
-                  ]
+                    Image.asset('assets/singer.png',height: 150,), //immaggine cantante
 
-              ),
+
+              ]
+
+          ),
           )
 
       );

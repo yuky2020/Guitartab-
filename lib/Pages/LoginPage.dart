@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              FlutterLogo(size: 150),
+          Image.asset('assets/guitar2.png',height: 200,) ,
               SizedBox(height: 50),
 
                Container(
