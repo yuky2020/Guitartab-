@@ -43,9 +43,9 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.end,
               children:[
                 Expanded(child:
-            _buildButtonColumn(context,Colors.blue, Icons.find_in_page, 'Crea nuovo evento','/newevent',),),
+            _buildButtonColumn(context,Colors.blue, Icons.add_location, 'Crea nuovo evento','/newevent',),),
              Expanded(child:
-            _buildButtonColumn(context,Colors.blue, Icons.add, 'Partecipa a un evento','/gotoevent',),),
+            _buildButtonColumn(context,Colors.blue, Icons.map, 'Partecipa a un evento','/gotoevent',),),
             ]),
           
         ]);
@@ -99,9 +99,9 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     
                     titleSection,
-                    Image.asset('assets/g-clef.png',height: 150,),//immaggine della nota
+                    //Image.asset('assets/g-clef.png',height: 150,),//immaggine della nota
                     button2Container,
-                    Image.asset('assets/singer.png',height: 150,), //immaggine cantante
+                    //Image.asset('assets/singer.png',height: 150,), //immaggine cantante
 
 
               ]
@@ -128,6 +128,7 @@ class _HomePageState extends State<HomePage> {
                     'Guitar tab for everyone',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      fontSize: 20,
                     ),
                   ),
                 ),
@@ -135,6 +136,7 @@ class _HomePageState extends State<HomePage> {
                   'Bentornato   '+Utente.user.email ,
                   style: TextStyle(
                     color: Colors.grey[500],
+                    fontSize: 16
                   ),
                 ),
               ],
@@ -162,13 +164,13 @@ class _HomePageState extends State<HomePage> {
 
      mainAxisAlignment: MainAxisAlignment.center,
      children: [
-       Icon(icon, color: color),
+       Icon(icon, color: color ,size: 100,),
        Container(
          margin: const EdgeInsets.only(top: 8),
          child: Text(
            label,
            style: TextStyle(
-             fontSize: 12,
+             fontSize: 16,
              fontWeight: FontWeight.w400,
              color: color,
            ),
