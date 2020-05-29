@@ -10,6 +10,6 @@ Può essere biuildata per android, ios e osx con codice nativo ;
 
 GuitarTab è una app per lo scambio di tabulature e accordi per chitarre e altri strumenti a corda , é inoltre possibile creare e gestire JamSession e piccoli eventi nell&#39; applicazione
 
-### Obbiettivo
+### Obiettivo
 
 Guitartab nasce come progetto personale per il corso di Mobile Computing dell&#39;Universita degli studi di roma tre ;
